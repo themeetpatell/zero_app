@@ -77,7 +77,7 @@ const CustomerStories = () => {
                 <div className="text-muted-foreground rw-eyebrow">
                   {story.category}
                 </div>
-                <div className="text-base font-normal">{story.title}</div>
+                <div className="text-base font-normal text-gray-200">{story.title}</div>
               </div>
             </a>
           ))}

@@ -12,11 +12,11 @@ const FooterCta = () => {
           className="block h-auto w-full"
         >
           <source
-            src="herovideo.mp4"
+            src="/herovideo.mp4"
             type="video/webm"
           />
           <source
-            src="herovideo.mp4"
+            src="/herovideo.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.

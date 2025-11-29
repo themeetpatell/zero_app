@@ -61,7 +61,7 @@ const StudiosFeature = () => {
                 muted
                 playsInline>
                 <source
-                  src="zero human dialogues.mp4"
+                  src="/zero human dialogues.mp4"
                   type="video/mp4" />
               </video>
             </div>

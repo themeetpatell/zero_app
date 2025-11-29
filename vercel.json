@@ -1,0 +1,13 @@
+{
+  "github": {
+    "enabled": true,
+    "autoAlias": true
+  },
+  "build": {
+    "env": {
+      "ENABLE_GIT_LFS": "true"
+    }
+  },
+  "installCommand": "bun install",
+  "buildCommand": "bun run build"
+}

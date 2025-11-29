@@ -6,21 +6,20 @@ import { useSession } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 
 const ZeroHumanLogo = ({ isDark }: { isDark: boolean }) => (
-<div className="flex items-center gap-2">
-  <img
-    src="/ZH New Logo.svg"
-    alt="Zero Human Logo"
-    className="h-6 w-6 sm:h-8 sm:w-8 object-contain"
-  />
-  
-  <span
-    className={`text-lg sm:text-xl font-normal tracking-tight transition-colors duration-300 ${
-      isDark ? 'text-white' : 'text-off-black'
-    }`}
-  >
-    Zero Human
-  </span>
-</div>
+  <div className="flex items-center gap-2">
+    <img
+      src="/ZH New Logo.svg"
+      alt="Zero Human Logo"
+      className="h-6 w-6 sm:h-8 sm:w-8 object-contain"
+    />
+
+    <span
+      className={`text-lg sm:text-xl font-normal tracking-tight transition-colors duration-300 ${isDark ? 'text-white' : 'text-off-black'
+        }`}
+    >
+      Zero Human
+    </span>
+  </div>
 
 
 );
@@ -88,11 +87,10 @@ const HeaderNavigation = () => {
   return (
     <>
       <header
-        className={`fixed w-full z-40 transition-all duration-300 py-4 lg:py-0 top-0 ${
-          isScrolled 
-            ? 'bg-[#1a1a1a] text-light-gray shadow-lg' 
+        className={`fixed w-full z-40 transition-all duration-300 py-4 lg:py-0 top-0 ${isScrolled
+            ? 'bg-[#1a1a1a] text-light-gray shadow-lg'
             : 'bg-white text-off-black shadow-sm'
-        }`}
+          }`}
       >
         <div className="rw-container">
           <div className="flex items-center justify-between static z-10">
@@ -109,7 +107,11 @@ const HeaderNavigation = () => {
               <ul className="flex items-center justify-center relative z-20">
                 {navLinks.map((link) => (
                   <li key={link.href} className="transition-all duration-200">
-                    <Link href={link.href} className="rw-eyebrow px-4 block hover:opacity-70 py-6 transition-opacity duration-200">
+                    <Link
+                      href={link.href}
+                      className={`rw-eyebrow px-4 block hover:opacity-70 py-6 transition-opacity duration-200 ${isScrolled ? 'text-white' : 'text-dark-gray'
+                        }`}
+                    >
                       {link.label}
                     </Link>
                   </li>
@@ -120,11 +122,10 @@ const HeaderNavigation = () => {
             <div className="lg:w-2/12 flex justify-end items-center gap-2 relative z-20">
               <button
                 onClick={handleGetStartedClick}
-                className={`rw-cta-text px-4 pt-[10px] pb-[11px] rounded-full transition-all duration-300 items-center justify-center whitespace-nowrap border inline-flex ${
-                  isScrolled
+                className={`rw-cta-text px-4 pt-[10px] pb-[11px] rounded-full transition-all duration-300 items-center justify-center whitespace-nowrap border inline-flex ${isScrolled
                     ? 'bg-white text-dark-gray border-white hover:bg-white/90'
                     : 'bg-off-black text-white border-off-black hover:bg-dark-gray'
-                }`}
+                  }`}
               >
                 {session?.user ? "Get Started" : "Get Started"}
               </button>

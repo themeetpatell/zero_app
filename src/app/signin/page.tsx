@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { authClient } from "@/lib/auth-client";
@@ -33,14 +33,19 @@ const MicrosoftIcon = () => (
 
 const SignInPage = () => {
   const [isLoading, setIsLoading] = useState<string | null>(null);
+  const [mounted, setMounted] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleSignIn = async (provider: 'google' | 'apple' | 'microsoft') => {
     setIsLoading(provider);
     
     try {
       const { data, error } = await authClient.signIn.social({
-        provider: provider,
+        provider,
         callbackURL: "/dashboard"
       });
       
@@ -50,7 +55,6 @@ const SignInPage = () => {
         return;
       }
       
-      // Success - OAuth will handle the redirect
       toast.success("Signed in successfully!");
     } catch (err) {
       toast.error("An error occurred during sign in");
@@ -59,79 +63,81 @@ const SignInPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center px-4">
-      <div className="w-full max-w-md">
-        <Link 
-          href="/"
-          className="inline-flex items-center gap-2 text-sm text-medium-gray hover:text-off-black transition-colors duration-200 mb-8"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Back to home
-        </Link>
+    <div className="min-h-screen bg-white flex items-center justify-center px-4 text-[#111827]">
+      {mounted && (
+        <div className="w-full max-w-md">
+          <Link 
+            href="/"
+            className="inline-flex items-center gap-2 text-sm text-[#6B7280] hover:text-[#111827] transition-colors duration-200 mb-8"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back to home
+          </Link>
 
-        <div className="bg-white border border-border rounded-xl p-8 shadow-[0px_4px_8px_0px_rgba(0,0,0,0.06)]">
-          <div className="text-center mb-8">
-            <h1 className="text-3xl font-semibold tracking-tight mb-2">Welcome to Zero Human</h1>
-            <p className="text-muted-foreground">Sign in to get started</p>
+          <div className="bg-white border border-[#E5E7EB] rounded-xl p-8 shadow-[0px_4px_8px_0px_rgba(0,0,0,0.06)]">
+            <div className="text-center mb-8">
+              <h1 className="text-3xl font-semibold tracking-tight mb-2 text-[#111827]">Welcome to Zero Human</h1>
+              <p className="text-[#6B7280]">Sign in to get started</p>
+            </div>
+
+            <div className="space-y-3">
+              <button
+                onClick={() => handleSignIn('google')}
+                disabled={isLoading !== null}
+                className="w-full flex items-center justify-center gap-3 px-4 py-3 border border-[#E5E7EB] rounded-full hover:bg-[#F9FAFB] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed group"
+              >
+                {isLoading === 'google' ? (
+                  <div className="w-4 h-4 border-2 border-[#111827] border-t-transparent rounded-full animate-spin" />
+                ) : (
+                  <GoogleIcon />
+                )}
+                <span className="font-medium text-[#111827]">Continue with Google</span>
+              </button>
+
+              <button
+                onClick={() => handleSignIn('apple')}
+                disabled={isLoading !== null}
+                className="w-full flex items-center justify-center gap-3 px-4 py-3 border border-[#E5E7EB] rounded-full hover:bg-[#F9FAFB] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed group"
+              >
+                {isLoading === 'apple' ? (
+                  <div className="w-4 h-4 border-2 border-[#111827] border-t-transparent rounded-full animate-spin" />
+                ) : (
+                  <AppleIcon />
+                )}
+                <span className="font-medium text-[#111827]">Continue with Apple</span>
+              </button>
+
+              <button
+                onClick={() => handleSignIn('microsoft')}
+                disabled={isLoading !== null}
+                className="w-full flex items-center justify-center gap-3 px-4 py-3 border border-[#E5E7EB] rounded-full hover:bg-[#F9FAFB] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed group"
+              >
+                {isLoading === 'microsoft' ? (
+                  <div className="w-4 h-4 border-2 border-[#111827] border-t-transparent rounded-full animate-spin" />
+                ) : (
+                  <MicrosoftIcon />
+                )}
+                <span className="font-medium text-[#111827]">Continue with Microsoft</span>
+              </button>
+            </div>
+
+            <div className="mt-8 text-center text-xs text-[#6B7280]">
+              By continuing, you agree to our{' '}
+              <Link href="/terms-of-use" className="underline hover:text-[#111827]">
+                Terms of Use
+              </Link>{' '}
+              and{' '}
+              <Link href="/privacy-policy" className="underline hover:text-[#111827]">
+                Privacy Policy
+              </Link>
+            </div>
           </div>
 
-          <div className="space-y-3">
-            <button
-              onClick={() => handleSignIn('google')}
-              disabled={isLoading !== null}
-              className="w-full flex items-center justify-center gap-3 px-4 py-3 border border-border rounded-full hover:bg-secondary transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed group"
-            >
-              {isLoading === 'google' ? (
-                <div className="w-4 h-4 border-2 border-off-black border-t-transparent rounded-full animate-spin" />
-              ) : (
-                <GoogleIcon />
-              )}
-              <span className="font-medium">Continue with Google</span>
-            </button>
-
-            <button
-              onClick={() => handleSignIn('apple')}
-              disabled={isLoading !== null}
-              className="w-full flex items-center justify-center gap-3 px-4 py-3 border border-border rounded-full hover:bg-secondary transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed group"
-            >
-              {isLoading === 'apple' ? (
-                <div className="w-4 h-4 border-2 border-off-black border-t-transparent rounded-full animate-spin" />
-              ) : (
-                <AppleIcon />
-              )}
-              <span className="font-medium">Continue with Apple</span>
-            </button>
-
-            <button
-              onClick={() => handleSignIn('microsoft')}
-              disabled={isLoading !== null}
-              className="w-full flex items-center justify-center gap-3 px-4 py-3 border border-border rounded-full hover:bg-secondary transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed group"
-            >
-              {isLoading === 'microsoft' ? (
-                <div className="w-4 h-4 border-2 border-off-black border-t-transparent rounded-full animate-spin" />
-              ) : (
-                <MicrosoftIcon />
-              )}
-              <span className="font-medium">Continue with Microsoft</span>
-            </button>
-          </div>
-
-          <div className="mt-8 text-center text-xs text-muted-foreground">
-            By continuing, you agree to our{' '}
-            <Link href="/terms-of-use" className="underline hover:text-off-black">
-              Terms of Use
-            </Link>{' '}
-            and{' '}
-            <Link href="/privacy-policy" className="underline hover:text-off-black">
-              Privacy Policy
-            </Link>
+          <div className="mt-8 text-center text-sm text-[#6B7280]">
+            <p>Need help? <a href="mailto:support@zerohuman.co" className="text-[#111827] hover:underline">Contact support</a></p>
           </div>
         </div>
-
-        <div className="mt-8 text-center text-sm text-muted-foreground">
-          <p>Need help? <a href="mailto:support@zerohuman.ai" className="text-off-black hover:underline">Contact support</a></p>
-        </div>
-      </div>
+      )}
     </div>
   );
 };

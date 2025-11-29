@@ -32,20 +32,20 @@ const TechnologyOverview = () => {
 
       const rect = heroRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
-      
+
       // Calculate scroll progress (0 to 1) as section scrolls through viewport
       const start = windowHeight;
       const end = -rect.height;
       const current = rect.top;
-      
+
       const progress = Math.max(0, Math.min(1, (start - current) / (start - end)));
-      
+
       setScrollProgress(progress);
     };
 
     window.addEventListener("scroll", handleScroll);
     handleScroll(); // Initial check
-    
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -64,11 +64,11 @@ const TechnologyOverview = () => {
   return (
     <>
       {/* Full Screen Hero Section */}
-      <section 
+      <section
         ref={heroRef}
         className="relative flex min-h-screen w-full items-center justify-center bg-white px-6 py-12"
       >
-        <div 
+        <div
           className="mx-auto max-w-5xl text-center"
           style={{
             opacity: opacity,
@@ -80,15 +80,15 @@ const TechnologyOverview = () => {
             Cinematic ads.<br />
             Born from voice.
           </h1>
-          
+
           <p className="mx-auto mb-12 max-w-4xl text-[18px] leading-relaxed text-medium-gray sm:text-[20px] md:text-[22px] lg:text-[24px]">
-            Zero Human is the world's first voice-directed cinematic AI engine. 
-            Simply speak your vision—our AI Co-Director creates fully customized, 
-            professional-quality 4K video ads in under 60 seconds. No cameras, 
-            actors, or production teams needed. From product reveals to social campaigns, 
+            Zero Human is the world's first voice-directed cinematic AI engine.
+            Simply speak your vision—our AI Co-Director creates fully customized,
+            professional-quality 4K video ads in under 60 seconds. No cameras,
+            actors, or production teams needed. From product reveals to social campaigns,
             we make premium video advertising accessible, affordable, and instant.
           </p>
-          
+
           <a
             href="/signin"
             className="inline-flex items-center justify-center whitespace-nowrap rounded-full border-2 border-off-black px-8 py-4 text-[16px] font-medium text-off-black transition-all duration-200 hover:bg-off-black hover:text-white sm:text-[18px]"
@@ -107,7 +107,13 @@ const TechnologyOverview = () => {
                 WHAT YOU CAN CREATE
               </p>
               <div className="flex items-center justify-center">
-                <div className="flex space-x-2 overflow-x-auto px-4 pb-4 [scrollbar-width:none] lg:space-x-4 [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+                <div
+                  className="flex space-x-2 overflow-x-auto px-4 pb-4 lg:space-x-4
+    scrollbar-none [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+                  style={{
+                    scrollbarWidth: "none" // Firefox
+                  }}
+                >
                   {useCases.map((useCase) => (
                     <button
                       key={useCase}
@@ -116,31 +122,32 @@ const TechnologyOverview = () => {
                         "rw-eyebrow whitespace-nowrap rounded-full px-4 py-2 font-medium transition-colors duration-200",
                         activeTab === useCase
                           ? "bg-off-black text-white"
-                          : "bg-transparent text-off-black hover:bg-off-white",
+                          : "bg-transparent text-off-black hover:bg-off-white"
                       )}
                     >
                       {useCase}
                     </button>
                   ))}
                 </div>
+
               </div>
             </div>
 
             {/* AI Co-Director Section - LUXURY MINIMAL */}
             <div className="mt-16 w-full lg:mt-24">
               <div className="mx-auto max-w-7xl px-6">
-                
+
                 {/* Header */}
                 <div className="mb-32 text-center">
                   <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-gray-300 bg-white px-6 py-3 text-sm font-medium uppercase tracking-wider text-gray-900 shadow-sm">
                     <Sparkles className="h-5 w-5 text-gray-900" />
                     Zero AI Co-Director
                   </div>
-                  
+
                   <h2 className="mb-8 text-6xl font-normal tracking-tight text-gray-900 sm:text-7xl lg:text-8xl">
                     Professional Direction.<br />Instant Creation.
                   </h2>
-                  
+
                   <p className="mx-auto max-w-3xl text-xl leading-relaxed text-gray-600">
                     Our AI Co-Director analyzes your product or service, then crafts professional recommendations including talent selection, dialogues, scripts, music, and guided shot sequences—delivering broadcast-quality ads in under 90 seconds.
                   </p>
@@ -149,7 +156,7 @@ const TechnologyOverview = () => {
                 {/* Main Feature Showcase */}
                 <div className="mb-32">
                   <div className="overflow-hidden rounded-none border border-gray-900 bg-gray-900">
-                    
+
                     {/* Top Banner */}
                     <div className="border-b border-gray-700 px-12 py-8">
                       <div className="flex items-center justify-between">
@@ -165,9 +172,9 @@ const TechnologyOverview = () => {
 
                     {/* Features Grid */}
                     <div className="grid divide-y divide-gray-700 lg:grid-cols-2 lg:divide-x lg:divide-y-0">
-                      
+
                       {/* Talent Selection */}
-                      <div 
+                      <div
                         className="group cursor-pointer p-12 transition-all duration-500 hover:bg-gray-800"
                         onMouseEnter={() => setHoveredFeature(0)}
                         onMouseLeave={() => setHoveredFeature(null)}
@@ -184,7 +191,7 @@ const TechnologyOverview = () => {
                       </div>
 
                       {/* Script & Dialogue */}
-                      <div 
+                      <div
                         className="group cursor-pointer p-12 transition-all duration-500 hover:bg-gray-800"
                         onMouseEnter={() => setHoveredFeature(1)}
                         onMouseLeave={() => setHoveredFeature(null)}
@@ -201,7 +208,7 @@ const TechnologyOverview = () => {
                       </div>
 
                       {/* Music & Sound */}
-                      <div 
+                      <div
                         className="group cursor-pointer p-12 transition-all duration-500 hover:bg-gray-800"
                         onMouseEnter={() => setHoveredFeature(2)}
                         onMouseLeave={() => setHoveredFeature(null)}
@@ -218,7 +225,7 @@ const TechnologyOverview = () => {
                       </div>
 
                       {/* Cinematography */}
-                      <div 
+                      <div
                         className="group cursor-pointer p-12 transition-all duration-500 hover:bg-gray-800"
                         onMouseEnter={() => setHoveredFeature(3)}
                         onMouseLeave={() => setHoveredFeature(null)}
@@ -242,7 +249,7 @@ const TechnologyOverview = () => {
                 {/* Process Timeline */}
                 <div className="mb-32">
                   <div className="space-y-px">
-                    
+
                     {/* Step 1 */}
                     <div className="group flex border border-gray-300 bg-white transition-all duration-300 hover:border-gray-900">
                       <div className="flex w-32 items-center justify-center border-r border-gray-300 bg-gray-50 group-hover:bg-gray-900">
