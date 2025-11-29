@@ -107,7 +107,7 @@ const IntroducingZeroV1Page = () => {
                 </button>
               </div>
               <div className="p-6">
-                <p className="text-sm text-muted-foreground mb-4">
+                <p className="text-sm text-[#1a1a1a] mb-4">
                   Copy the link below to share this research
                 </p>
                 <div className="flex items-center gap-2 p-3 bg-off-white rounded-lg border border-border">
@@ -176,11 +176,11 @@ const IntroducingZeroV1Page = () => {
           className={`pt-32 pb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
           <div className="rw-container max-w-4xl mx-auto text-center">
-            <p className="text-sm font-medium text-muted-foreground mb-4">RESEARCH / JANUARY 15, 2025</p>
+            <p className="text-sm font-medium text-[#1a1a1a] mb-4">RESEARCH / JANUARY 15, 2025</p>
             <h1 className="text-[40px] lg:text-[60px] font-normal leading-[1.1] tracking-[-2px] mb-6">
               Introducing Zero V1
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-[#1a1a1a] max-w-2xl mx-auto">
               The world's first voice-directed cinematic AI engine for effortless product advertising. 
               Physically accurate, brand-aligned 4K video ads in under 60 seconds—just speak your vision.
             </p>
@@ -205,13 +205,13 @@ const IntroducingZeroV1Page = () => {
           <div className="prose prose-lg max-w-none">
             <section className="mb-16">
               <h2 className="text-3xl font-normal mb-6 tracking-tight">Overview</h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-[#1a1a1a] leading-relaxed mb-4">
                 Zero V1 represents a leap forward in AI-powered video generation, specifically designed for 
                 product advertising. Built on breakthrough research in multimodal AI and world simulation, 
                 Zero V1 enables brands to create cinematic, physically accurate video ads simply by speaking 
                 their vision—no cameras, actors, or production teams required.
               </p>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-[#1a1a1a] leading-relaxed">
                 Our AI Co-Director acts as your creative partner, recommending scripts, scenes, camera movements, 
                 soundtracks, and brand-consistent visuals. The result: professional 4K video ads in under 60 seconds 
                 that drive engagement and conversions across every channel from TikTok to YouTube.
@@ -223,7 +223,7 @@ const IntroducingZeroV1Page = () => {
               <div className="space-y-6">
                 <div className="bg-off-white rounded-xl p-6">
                   <h3 className="text-xl font-medium mb-3">Voice-Directed Creation</h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-[#1a1a1a]">
                     Simply describe your product and vision in natural language. Zero V1 understands intent, 
                     brand requirements, and platform specifications to generate channel-native ads optimized 
                     for TikTok, Reels, Shorts, YouTube, and paid placements.
@@ -231,7 +231,7 @@ const IntroducingZeroV1Page = () => {
                 </div>
                 <div className="bg-off-white rounded-xl p-6">
                   <h3 className="text-xl font-medium mb-3">AI Co-Director Intelligence</h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-[#1a1a1a]">
                     Our recommendation system guides every creative decision—from hook composition and scene 
                     pacing to soundtrack selection and CTA placement. It learns from performance data to 
                     continuously improve ad effectiveness and ROAS.
@@ -239,7 +239,7 @@ const IntroducingZeroV1Page = () => {
                 </div>
                 <div className="bg-off-white rounded-xl p-6">
                   <h3 className="text-xl font-medium mb-3">Physical Realism & Brand Consistency</h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-[#1a1a1a]">
                     Zero V1 simulates worlds with accurate physics, lighting, and motion. Products interact 
                     realistically with environments while maintaining persistent brand identity, visual style, 
                     and emotional tone across multi-shot sequences.
@@ -250,13 +250,13 @@ const IntroducingZeroV1Page = () => {
 
             <section className="mb-16">
               <h2 className="text-3xl font-normal mb-6 tracking-tight">Technical Innovation</h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-[#1a1a1a] leading-relaxed mb-4">
                 Zero V1 is powered by a novel architecture that combines transformer-based models with advanced 
                 diffusion techniques and world simulation. This allows the model to maintain persistent understanding 
                 of 3D space, object permanence, and physics while generating content—solving the hardest problems 
                 in generative video AI.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-[#1a1a1a] leading-relaxed mb-4">
                 Trained on millions of product ads, brand campaigns, and cinematic footage paired with rich 
                 performance metadata, Zero V1 understands not just what makes video look good, but what drives 
                 conversions. The model generates synchronized dialogue, sound effects, and music that amplify 
@@ -266,10 +266,10 @@ const IntroducingZeroV1Page = () => {
 
             <section className="mb-16">
               <h2 className="text-3xl font-normal mb-6 tracking-tight">Applications</h2>
-              <p className="text-muted-foreground leading-relaxed mb-6">
+              <p className="text-[#1a1a1a] leading-relaxed mb-6">
                 Zero V1 unlocks new possibilities for brands across industries:
               </p>
-              <ul className="space-y-4 text-muted-foreground">
+              <ul className="space-y-4 text-[#1a1a1a]">
                 <li className="flex gap-3">
                   <span className="text-off-black font-medium">•</span>
                   <span><strong className="text-off-black">E-commerce & DTC Brands:</strong> Scale video ad production 10x while cutting costs by 90%. Create product reveals, lifestyle shots, and comparison ads at the speed of demand.</span>
@@ -291,7 +291,7 @@ const IntroducingZeroV1Page = () => {
 
             <section className="mb-16">
               <h2 className="text-3xl font-normal mb-6 tracking-tight">Availability</h2>
-              <p className="text-muted-foreground leading-relaxed mb-6">
+              <p className="text-[#1a1a1a] leading-relaxed mb-6">
                 Zero V1 is currently in private beta with select brands and performance marketing agencies. 
                 We're rapidly expanding access while ensuring responsible deployment and optimal results for 
                 every customer. Enterprise pilots and agency partnerships are available now.
@@ -317,7 +317,7 @@ const IntroducingZeroV1Page = () => {
         {/* Related Research */}
         <section className="bg-off-white py-20">
           <div className="rw-container max-w-4xl mx-auto">
-            <h2 className="text-2xl font-normal mb-8 tracking-tight">Related Research</h2>
+            <h2 className="text-2xl text-[#1a1a1a] font-normal mb-8 tracking-tight">Related Research</h2>
             <div className="grid md:grid-cols-2 gap-6">
               <Link href="/research/zero-co-director" className="group bg-white rounded-xl overflow-hidden border border-border hover:shadow-lg transition-all">
                 <div className="aspect-video relative overflow-hidden">
@@ -330,7 +330,7 @@ const IntroducingZeroV1Page = () => {
                   />
                 </div>
                 <div className="p-6">
-                  <p className="text-xs text-muted-foreground mb-2">Research / December 8, 2024</p>
+                  <p className="text-xs text-[#1a1a1a] mb-2">Research / December 8, 2024</p>
                   <h3 className="font-medium group-hover:text-medium-gray transition-colors">
                     Intelligently built Zero Co-Director
                   </h3>
