@@ -1,0 +1,313 @@
+/* Updated: 2025-11-24T15:42:46.510Z */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;700&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  /* Shadcn/UI colors - Dark Theme */
+  --color-background: #191a1a;
+  --color-foreground: #ffffff;
+
+  --color-card: #252525;
+  --color-card-foreground: #ffffff;
+
+  
+  --font-sans: "abcnormal", "Inter", sans-serif;
+  --font-display: "abcnormal", "Inter", sans-serif;
+  --font-body: "abcnormal", "Inter", sans-serif;
+
+  --color-popover: #252525;
+  --color-popover-foreground: #ffffff;
+
+  /* UPDATED TO NEW ACCENT COLOR */
+  --color-primary: #00bdb0ff;
+  --color-primary-foreground: #0f0f0f;
+
+  --color-secondary: #212121;
+  --color-secondary-foreground: #ffffff;
+
+  --color-muted: rgba(255, 255, 255, 0.06);
+  --color-muted-foreground: rgba(255, 255, 255, 0.5);
+
+  --color-accent: rgba(255, 255, 255, 0.03);
+  --color-accent-foreground: #ffffff;
+
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #fafafa;
+
+  --color-border: rgba(255, 255, 255, 0.06);
+  --color-input: #252525;
+
+  /* UPDATED RING COLOR */
+  --color-ring: rgba(0, 189, 176, 0.3);
+
+  /* Chart colors kept same except orange-based if you want change */
+  --color-chart-1: #e67e22;
+  --color-chart-2: #2d8659;
+  --color-chart-3: #1e3a5f;
+  --color-chart-4: #f1c40f;
+  --color-chart-5: #e74c3c;
+
+  --color-sidebar: #1f2121;
+  --color-sidebar-foreground: rgba(255, 255, 255, 0.5);
+
+  /* UPDATED SIDEBAR PRIMARY */
+  --color-sidebar-primary: #00bdb0ff;
+  --color-sidebar-primary-foreground: #0f0f0f;
+
+  --color-sidebar-accent: rgba(255, 255, 255, 0.08);
+  --color-sidebar-accent-foreground: #ffffff;
+  --color-sidebar-border: rgba(255, 255, 255, 0.06);
+
+  --color-sidebar-ring: rgba(0, 189, 176, 0.3);
+
+  --radius-lg: 0.875rem;
+  --radius-md: 0.75rem;
+  --radius-sm: 0.625rem;
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+
+  /* Refined Design Tokens */
+  --color-bg-base: #1a1a1a;
+  --color-bg-underlay: #0f0f0f;
+  --color-bg-raised: #252525;
+  --color-bg-offset: #1f1f1f;
+  --color-bg-subtle: rgba(255, 255, 255, 0.06);
+  --color-bg-subtler: rgba(255, 255, 255, 0.03);
+
+  --color-border-subtlest: rgba(255, 255, 255, 0.06);
+  --color-border-subtle: rgba(255, 255, 255, 0.1);
+  --color-border-subtler: rgba(255, 255, 255, 0.04);
+
+  --color-text-foreground: #ffffff;
+  --color-text-quiet: rgba(255, 255, 255, 0.6);
+  --color-text-quieter: rgba(255, 255, 255, 0.4);
+  --color-text-inverse: #0f0f0f;
+
+  /* UPDATED ACCENT SUPER FAMILY */
+  --color-accent-super: #00bdb0ff;
+  --color-accent-super-hover: rgba(0, 189, 176, 0.85);
+  --color-accent-super-bg: rgba(0, 189, 176, 0.08);
+
+  /* UPDATED SELECTION COLOR */
+  --color-selection-bg: rgba(0, 189, 176, 0.15);
+
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "PP Editorial New", Georgia, serif;
+  --font-mono: "Berkeley Mono", "Courier New", monospace;
+  --font-serif: "Instrument Serif", Georgia, serif;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semimedium: 550;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-border);
+  }
+}
+
+@layer utilities {
+  body {
+    font-family: var(--font-sans);
+  }
+}
+
+@layer base {
+  :root {
+    --background: var(--color-background);
+    --foreground: var(--color-foreground);
+    --card: var(--color-card);
+    --card-foreground: var(--color-card-foreground);
+    --popover: var(--color-popover);
+    --popover-foreground: var(--color-popover-foreground);
+    --primary: var(--color-primary);
+    --primary-foreground: var(--color-primary-foreground);
+    --secondary: var(--color-secondary);
+    --secondary-foreground: var(--color-secondary-foreground);
+    --muted: var(--color-muted);
+    --muted-foreground: var(--color-muted-foreground);
+    --accent: var(--color-accent);
+    --accent-foreground: var(--color-accent-foreground);
+    --destructive: var(--color-destructive);
+    --destructive-foreground: var(--color-destructive-foreground);
+    --border: var(--color-border);
+    --input: var(--color-input);
+    --ring: var(--color-ring);
+    --chart-1: var(--color-chart-1);
+    --chart-2: var(--color-chart-2);
+    --chart-3: var(--color-chart-3);
+    --chart-4: var(--color-chart-4);
+    --chart-5: var(--color-chart-5);
+    --radius: var(--radius-lg);
+    --sidebar-background: var(--color-sidebar);
+    --sidebar-foreground: var(--color-sidebar-foreground);
+    --sidebar-primary: var(--color-sidebar-primary);
+    --sidebar-primary-foreground: var(--color-sidebar-primary-foreground);
+    --sidebar-accent: var(--color-sidebar-accent);
+    --sidebar-accent-foreground: var(--color-sidebar-accent-foreground);
+    --sidebar-border: var(--color-sidebar-border);
+    --sidebar-ring: var(--color-sidebar-ring);
+  }
+
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    height: 100%;
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    color: var(--color-text-foreground);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+  }
+
+  p {
+    font-family: var(--font-sans);
+    color: var(--color-text-foreground);
+    line-height: 1.6;
+  }
+
+  a {
+    color: var(--color-accent-super);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  a:hover {
+    color: var(--color-accent-super-hover);
+  }
+
+  ::selection {
+    background-color: var(--color-selection-bg);
+    color: var(--color-text-foreground);
+  }
+
+  /* Scrollbars */
+  .scrollbar-subtle::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-subtle::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-subtle::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+
+  .scrollbar-subtle::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  /* Placeholder */
+  ::placeholder {
+    color: var(--color-text-quieter);
+    opacity: 1;
+  }
+
+  textarea,
+  input {
+    caret-color: var(--color-accent-super);
+  }
+
+  button {
+    font-weight: 500;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  button:active {
+    transform: scale(0.98);
+  }
+
+  [role="dialog"],
+  [data-radix-dialog-content],
+  [data-radix-alert-dialog-content],
+  [data-radix-dropdown-menu-content],
+  [data-radix-popover-content] {
+    z-index: 9999 !important;
+  }
+
+  [data-radix-dialog-overlay],
+  [data-radix-alert-dialog-overlay] {
+    z-index: 9998 !important;
+  }
+}
+
+/* Hide Next.js error overlay portal */
+nextjs-portal {
+  display: none !important;
+}
+
+.scrollbar-subtle {
+  scrollbar-width: thin;
+  scrollbar-color: #374151 transparent;
+}
+
+.scrollbar-subtle::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-subtle::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-subtle::-webkit-scrollbar-thumb {
+  background-color: #374151;
+  border-radius: 3px;
+}
+
+.scrollbar-subtle::-webkit-scrollbar-thumb:hover {
+  background-color: #4B5563;
+}
