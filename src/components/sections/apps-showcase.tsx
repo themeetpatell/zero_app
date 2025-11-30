@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface UseCase {
@@ -16,7 +16,6 @@ const useCases: UseCase[] = [
     description: "Cinematic realism that feels alive. Create authentic human performances with real actions and motion depth",
     imageUrl: "https://images.pexels.com/photos/66134/pexels-photo-66134.jpeg?auto=compress&cs=tinysrgb&w=800"
   },
- 
   { 
     number: 2, 
     title: "Virtual Location Scouting", 
@@ -29,7 +28,6 @@ const useCases: UseCase[] = [
     description: "AI identifies technical requirements, complex scenes, and suggests simplifications instantly",
     imageUrl: "https://images.pexels.com/photos/6899393/pexels-photo-6899393.jpeg?auto=compress&cs=tinysrgb&w=800"
   },
-  
   { 
     number: 4, 
     title: "Synthetic Performer Testing", 
@@ -60,7 +58,6 @@ const useCases: UseCase[] = [
     description: "Standard footage enhanced with AI; actors integrated with digital characters seamlessly",
     imageUrl: "https://images.pexels.com/photos/7991226/pexels-photo-7991226.jpeg?auto=compress&cs=tinysrgb&w=800"
   },
-  
   { 
     number: 9, 
     title: "Dialogue Fix (ADR)", 
@@ -79,7 +76,6 @@ const useCases: UseCase[] = [
     description: "Generate realistic crowds and extras digitally; change composition without hiring talent",
     imageUrl: "https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=800"
   },
-  
   { 
     number: 12, 
     title: "Intelligent Scene Detection", 
@@ -128,15 +124,12 @@ const useCases: UseCase[] = [
     description: "Describe desired sound and AI generates adaptive soundscapes and synthetic foley",
     imageUrl: "https://images.pexels.com/photos/2608519/pexels-photo-2608519.jpeg?auto=compress&cs=tinysrgb&w=800"
   },
-
-
   { 
     number: 20, 
     title: "Archival Footage Restoration", 
     description: "Restore archival material to broadcast quality; enhance clarity and colorize B&W",
     imageUrl: "https://images.pexels.com/photos/436413/pexels-photo-436413.jpeg?auto=compress&cs=tinysrgb&w=800"
   },
-  
   { 
     number: 21, 
     title: "Rapid Prototyping & Animatics", 
@@ -148,8 +141,27 @@ const useCases: UseCase[] = [
 const AppsShowcase = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const cardsPerView = 4;
+  
+  const getCardsPerView = () => {
+    if (typeof window === 'undefined') return 4;
+    if (window.innerWidth < 640) return 1;
+    if (window.innerWidth < 1024) return 2;
+    return 4;
+  };
+  
+  const [cardsPerView, setCardsPerView] = useState(getCardsPerView());
   const maxIndex = Math.max(0, useCases.length - cardsPerView);
+  
+  useEffect(() => {
+    const handleResize = () => {
+      const newCardsPerView = getCardsPerView();
+      setCardsPerView(newCardsPerView);
+      setCurrentIndex(prev => Math.min(prev, Math.max(0, useCases.length - newCardsPerView)));
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handlePrev = () => {
     setCurrentIndex(prev => Math.max(0, prev - 1));
@@ -162,19 +174,19 @@ const AppsShowcase = () => {
   const visibleCards = useCases.slice(currentIndex, currentIndex + cardsPerView);
 
   return (
-    <section className="bg-white py-24">
-      <div className="max-w-7xl mx-auto px-8">
+    <section className="bg-white py-12 sm:py-16 lg:py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-[40px] font-normal tracking-[-2px] text-gray-900 mb-2">
+          <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-normal tracking-[-1px] sm:tracking-[-2px] text-gray-900 mb-2">
             Use Case for Everything
           </h2>
-          <p className="mx-auto max-w-xl text-gray-600">
+          <p className="mx-auto max-w-xl text-sm sm:text-base text-gray-600 px-4 sm:px-0">
             Ideal for businesses crafting quick advertisements, it streamlines the process from voice prompts to polished outputs, emphasizing speed, ease, and targeted creativity for marketing needs.
           </p>
         </div>
 
-        <div className="mt-12 mb-6 flex items-center justify-between">
-          <div className="relative">
+        <div className="mt-8 sm:mt-10 lg:mt-12 mb-4 sm:mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="relative w-full sm:w-auto">
             <button
               onClick={() => setDropdownOpen(!dropdownOpen)}
               className="flex items-center gap-1 text-gray-900 transition-colors hover:text-gray-600 text-sm font-medium"
@@ -184,7 +196,7 @@ const AppsShowcase = () => {
             </button>
             
             {dropdownOpen && (
-              <div className="absolute top-full left-0 mt-2 w-80 max-h-96 overflow-y-auto bg-white border border-gray-200 rounded-lg shadow-lg z-10">
+              <div className="absolute top-full left-0 mt-2 w-full sm:w-80 max-h-96 overflow-y-auto bg-white border border-gray-200 rounded-lg shadow-lg z-10">
                 {useCases.map((useCase) => (
                   <button
                     key={useCase.number}
@@ -202,13 +214,13 @@ const AppsShowcase = () => {
             )}
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 sm:gap-4">
             <div className="flex items-center gap-2">
               <button
                 onClick={handlePrev}
                 disabled={currentIndex === 0}
                 aria-label="Previous page"
-                className="flex h-6 w-6 items-center justify-center rounded-md bg-gray-100 text-gray-600 transition-colors hover:bg-gray-200 disabled:opacity-40 disabled:cursor-not-allowed"
+                className="flex h-8 w-8 items-center justify-center rounded-md bg-gray-100 text-gray-600 transition-colors hover:bg-gray-200 disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 <ChevronLeft className="h-4 w-4" />
               </button>
@@ -216,18 +228,18 @@ const AppsShowcase = () => {
                 onClick={handleNext}
                 disabled={currentIndex >= maxIndex}
                 aria-label="Next page"
-                className="flex h-6 w-6 items-center justify-center rounded-md bg-gray-100 text-gray-600 transition-colors hover:bg-gray-200 disabled:opacity-40 disabled:cursor-not-allowed"
+                className="flex h-8 w-8 items-center justify-center rounded-md bg-gray-100 text-gray-600 transition-colors hover:bg-gray-200 disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 <ChevronRight className="h-4 w-4" />
               </button>
             </div>
-            <span className="text-xs text-gray-500 uppercase tracking-wider">
+            <span className="text-xs text-gray-500 uppercase tracking-wider whitespace-nowrap">
               {currentIndex + 1}-{Math.min(currentIndex + cardsPerView, useCases.length)} of {useCases.length}
             </span>
           </div>
         </div>
 
-        <div className="grid grid-cols-4 gap-4 px-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:px-12">
           {visibleCards.map((useCase) => (
             <div
               key={useCase.number}
@@ -237,7 +249,7 @@ const AppsShowcase = () => {
                 <div className="flex-shrink-0 w-5 h-5 rounded bg-gray-300 flex items-center justify-center text-gray-600 font-medium text-[10px]">
                   {useCase.number}
                 </div>
-                <h3 className="text-lg font-semibold leading-tight text-gray-900">
+                <h3 className="text-base sm:text-lg font-semibold leading-tight text-gray-900">
                   {useCase.title}
                 </h3>
               </div>
@@ -247,7 +259,7 @@ const AppsShowcase = () => {
               <img
                 src={useCase.imageUrl}
                 alt={useCase.title}
-                className="w-full h-28 rounded-md object-cover"
+                className="w-full h-28 sm:h-32 lg:h-28 rounded-md object-cover"
               />
             </div>
           ))}
