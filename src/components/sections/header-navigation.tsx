@@ -33,8 +33,11 @@ const HamburgerIcon = ({ isDark }: { isDark: boolean }) => (
 );
 
 const navLinks = [
+  { href: "/use-cases", label: "Use Cases" },
+  { href: "/pricing", label: "Pricing" },
+  { href: "/marketplace", label: "Marketplace" },
   { href: "/research/introducing-zero-v1", label: "Research" },
-  { href: "/company", label: "Company" },
+  { href: "/about", label: "About" },
 ];
 
 const HeaderNavigation = () => {

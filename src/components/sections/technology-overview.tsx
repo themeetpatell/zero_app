@@ -8,16 +8,16 @@ const cn = (...classes: Array<string | false | null | undefined>): string =>
   classes.filter((c): c is string => Boolean(c)).join(" ");
 
 const useCases = [
-  "Product Ads",
-  "TikTok & Reels",
-  "E-commerce Videos",
-  "Brand Storytelling",
-  "Product Reveals",
-  "Social Campaigns",
-  "Virtual Try-On",
-  "Mood Boards",
-  "Video Commerce",
-  "Performance Ads",
+  "DTC Launches",
+  "Performance UGC",
+  "Global Variants",
+  "B2B Explainers",
+  "App Install Ads",
+  "Localized Variants",
+  "Retail & OOH",
+  "Ad Refresh in 60s",
+  "Brand Films",
+  "Marketplace Ready",
 ];
 
 const TechnologyOverview = () => {
@@ -66,32 +66,37 @@ const TechnologyOverview = () => {
       {/* Full Screen Hero Section */}
       <section
         ref={heroRef}
-        className="relative flex min-h-screen w-full items-center justify-center bg-white px-6 py-12"
+        className="relative flex min-h-screen w-full items-center justify-center bg-gradient-to-b from-white via-[#f7f7f7] to-white px-6 py-12"
       >
+        <div className="absolute inset-x-4 sm:inset-x-10 top-12 bottom-12 rounded-[32px] bg-gradient-to-br from-off-black/8 via-white to-white shadow-[0_50px_120px_rgba(0,0,0,0.12)]" />
         <div
-          className="mx-auto max-w-5xl text-center"
+          className="mx-auto max-w-6xl text-center relative"
           style={{
             opacity: opacity,
             transform: `scale(${scale})`,
             transition: 'opacity 0.05s ease-out, transform 0.05s ease-out'
           }}
         >
-          <h1 className="mb-8 text-[48px] font-normal leading-[1.1] tracking-[-0.02em] text-off-black sm:text-[64px] md:text-[80px] lg:text-[96px] xl:text-[120px]">
-            Cinematic ads.<br />
-            Born from voice.
+          <div className="inline-flex items-center gap-2 rounded-full border border-off-black/10 bg-white px-5 py-2 text-xs uppercase tracking-[0.2em] text-off-black/70 shadow-sm mb-6">
+            Voice-directed • Ad-native • Marketplace
+          </div>
+          <h1 className="mb-6 text-[42px] sm:text-[56px] md:text-[72px] lg:text-[86px] xl:text-[96px] font-normal leading-[0.98] tracking-[-0.03em] text-off-black">
+            The voice-first
+            <br />
+            ad studio & marketplace.
           </h1>
 
-          <p className="mx-auto mb-12 max-w-4xl text-[18px] leading-relaxed text-medium-gray sm:text-[20px] md:text-[22px] lg:text-[24px]">
-            Zero Human is the world's first voice-directed cinematic AI engine.
-            Simply speak your vision—our AI Co-Director creates fully customized,
-            professional-quality 4K video ads in under 60 seconds. No cameras,
-            actors, or production teams needed. From product reveals to social campaigns,
-            we make premium video advertising accessible, affordable, and instant.
+          <p className="mx-auto mb-10 max-w-4xl text-[18px] leading-relaxed text-medium-gray sm:text-[20px] md:text-[22px] lg:text-[24px]">
+            HeyGen makes avatars. Runway makes clips. Zero Human makes finished,
+            advertising-optimized videos and a place to sell them. Speak your
+            brief and our AI Co-Director delivers scripted,
+            talent-cast, shot-designed, 4K broadcast ads in under 60 seconds—ready
+            for Meta, TikTok, CTV, or to list in the marketplace.
           </p>
 
           <a
             href="/signin"
-            className="inline-flex items-center justify-center whitespace-nowrap rounded-full border-2 border-off-black px-8 py-4 text-[16px] font-medium text-off-black transition-all duration-200 hover:bg-off-black hover:text-white sm:text-[18px]"
+            className="inline-flex items-center justify-center whitespace-nowrap rounded-full border border-off-black bg-off-black text-white px-8 py-4 text-[16px] font-medium transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] sm:text-[18px]"
           >
             Start Creating
           </a>
@@ -119,10 +124,10 @@ const TechnologyOverview = () => {
                       key={useCase}
                       onClick={() => setActiveTab(useCase)}
                       className={cn(
-                        "rw-eyebrow whitespace-nowrap rounded-full px-4 py-2 font-medium transition-colors duration-200",
+                        "rw-eyebrow whitespace-nowrap rounded-full px-4 py-2 font-medium transition-colors duration-200 border",
                         activeTab === useCase
-                          ? "bg-off-black text-white"
-                          : "bg-transparent text-off-black hover:bg-off-white"
+                          ? "bg-off-black text-white border-off-black"
+                          : "bg-white text-off-black hover:bg-off-white border-transparent"
                       )}
                     >
                       {useCase}
@@ -138,27 +143,30 @@ const TechnologyOverview = () => {
               <div className="mx-auto max-w-7xl px-6">
 
                 {/* Header */}
-                <div className="mb-32 text-center">
-                  <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-gray-300 bg-white px-6 py-3 text-sm font-medium uppercase tracking-wider text-gray-900 shadow-sm">
+                <div className="mb-20 text-center">
+                  <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-gray-200 bg-white px-6 py-3 text-sm font-medium uppercase tracking-wider text-gray-900 shadow-sm">
                     <Sparkles className="h-5 w-5 text-gray-900" />
                     Zero AI Co-Director
                   </div>
 
-                  <h2 className="mb-8 text-6xl font-normal tracking-tight text-gray-900 sm:text-7xl lg:text-8xl">
+                  <h2 className="mb-6 text-5xl font-normal tracking-tight text-gray-900 sm:text-6xl lg:text-7xl">
                     Professional Direction.<br />Instant Creation.
                   </h2>
 
-                  <p className="mx-auto max-w-3xl text-xl leading-relaxed text-gray-600">
-                    Our AI Co-Director analyzes your product or service, then crafts professional recommendations including talent selection, dialogues, scripts, music, and guided shot sequences—delivering broadcast-quality ads in under 90 seconds.
-                  </p>
+              <p className="mx-auto max-w-3xl text-xl leading-relaxed text-gray-600">
+                Our AI Co-Director is a full production stack: voice-to-video,
+                multilingual scriptwriting, casting, music, lighting, and shot
+                sequencing. It optimizes for CTR, conversion, ROI—not just pretty
+                pixels—so every export is marketplace-ready.
+              </p>
                 </div>
 
                 {/* Main Feature Showcase */}
                 <div className="mb-32">
-                  <div className="overflow-hidden rounded-none border border-gray-900 bg-gray-900">
+                  <div className="overflow-hidden rounded-3xl border border-gray-200 bg-gradient-to-br from-gray-900 via-gray-900 to-black shadow-2xl">
 
                     {/* Top Banner */}
-                    <div className="border-b border-gray-700 px-12 py-8">
+                    <div className="border-b border-gray-800 px-10 py-8">
                       <div className="flex items-center justify-between">
                         <h3 className="text-2xl font-light tracking-tight text-white">
                           Your Professional Production Team
@@ -171,11 +179,11 @@ const TechnologyOverview = () => {
                     </div>
 
                     {/* Features Grid */}
-                    <div className="grid divide-y divide-gray-700 lg:grid-cols-2 lg:divide-x lg:divide-y-0">
+                    <div className="grid divide-y divide-gray-800 lg:grid-cols-2 lg:divide-x lg:divide-y-0">
 
                       {/* Talent Selection */}
                       <div
-                        className="group cursor-pointer p-12 transition-all duration-500 hover:bg-gray-800"
+                        className="group cursor-pointer p-10 transition-all duration-500 hover:bg-gray-800/70"
                         onMouseEnter={() => setHoveredFeature(0)}
                         onMouseLeave={() => setHoveredFeature(null)}
                       >
@@ -183,7 +191,7 @@ const TechnologyOverview = () => {
                           <Wand2 className="h-8 w-8 text-white" />
                           <span className="text-sm font-light uppercase tracking-widest text-gray-500">01</span>
                         </div>
-                        <h4 className="mb-4 text-3xl font-light text-white">Talent & Casting</h4>
+                        <h4 className="mb-3 text-3xl font-light text-white">Talent & Casting</h4>
                         <p className="mb-6 text-gray-400">
                           AI selects perfect talent matching your brand identity, target audience, and campaign objectives
                         </p>
@@ -192,7 +200,7 @@ const TechnologyOverview = () => {
 
                       {/* Script & Dialogue */}
                       <div
-                        className="group cursor-pointer p-12 transition-all duration-500 hover:bg-gray-800"
+                        className="group cursor-pointer p-10 transition-all duration-500 hover:bg-gray-800/70"
                         onMouseEnter={() => setHoveredFeature(1)}
                         onMouseLeave={() => setHoveredFeature(null)}
                       >
@@ -200,7 +208,7 @@ const TechnologyOverview = () => {
                           <Play className="h-8 w-8 text-white" />
                           <span className="text-sm font-light uppercase tracking-widest text-gray-500">02</span>
                         </div>
-                        <h4 className="mb-4 text-3xl font-light text-white">Scripts & Dialogues</h4>
+                        <h4 className="mb-3 text-3xl font-light text-white">Scripts & Dialogues</h4>
                         <p className="mb-6 text-gray-400">
                           Professional copywriting with compelling hooks, emotional beats, and conversion-optimized CTAs
                         </p>
@@ -209,7 +217,7 @@ const TechnologyOverview = () => {
 
                       {/* Music & Sound */}
                       <div
-                        className="group cursor-pointer p-12 transition-all duration-500 hover:bg-gray-800"
+                        className="group cursor-pointer p-10 transition-all duration-500 hover:bg-gray-800/70"
                         onMouseEnter={() => setHoveredFeature(2)}
                         onMouseLeave={() => setHoveredFeature(null)}
                       >
@@ -217,7 +225,7 @@ const TechnologyOverview = () => {
                           <Zap className="h-8 w-8 text-white" />
                           <span className="text-sm font-light uppercase tracking-widest text-gray-500">03</span>
                         </div>
-                        <h4 className="mb-4 text-3xl font-light text-white">Music & Sound Design</h4>
+                        <h4 className="mb-3 text-3xl font-light text-white">Music & Sound Design</h4>
                         <p className="mb-6 text-gray-400">
                           Curated soundtracks, voiceover direction, and audio mixing perfectly synchronized to your narrative
                         </p>
@@ -226,7 +234,7 @@ const TechnologyOverview = () => {
 
                       {/* Cinematography */}
                       <div
-                        className="group cursor-pointer p-12 transition-all duration-500 hover:bg-gray-800"
+                        className="group cursor-pointer p-10 transition-all duration-500 hover:bg-gray-800/70"
                         onMouseEnter={() => setHoveredFeature(3)}
                         onMouseLeave={() => setHoveredFeature(null)}
                       >
@@ -234,7 +242,7 @@ const TechnologyOverview = () => {
                           <Palette className="h-8 w-8 text-white" />
                           <span className="text-sm font-light uppercase tracking-widest text-gray-500">04</span>
                         </div>
-                        <h4 className="mb-4 text-3xl font-light text-white">Guided Shot Sequences</h4>
+                        <h4 className="mb-3 text-3xl font-light text-white">Guided Shot Sequences</h4>
                         <p className="mb-6 text-gray-400">
                           Professional camera movements, lighting setups, and shot compositions guided by cinematic principles
                         </p>

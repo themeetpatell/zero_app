@@ -47,8 +47,12 @@ const ResearchShowcase = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-black pt-20 text-white lg:pt-32 pb-10">
-      <div className="rw-container">
+    <section ref={sectionRef} className="relative bg-gradient-to-b from-black via-[#0d0f11] to-black pt-20 text-white lg:pt-32 pb-12 overflow-hidden">
+      <div className="absolute inset-0 opacity-50 pointer-events-none">
+        <div className="absolute left-[-20%] top-0 h-full w-2/3 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.08),transparent_45%)]" />
+        <div className="absolute right-[-10%] bottom-0 h-full w-2/3 bg-[radial-gradient(circle_at_80%_80%,rgba(255,255,255,0.06),transparent_45%)]" />
+      </div>
+      <div className="rw-container relative">
         <div className={`lg:w-7/12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <p className="mb-4 text-xs font-medium text-white/60">OUR RESEARCH</p>
           <h2 className="mb-8 text-[36px] font-normal leading-[1.15] tracking-[-0.72px] lg:text-[40px] lg:leading-none lg:tracking-[-1.6px]">
@@ -56,7 +60,7 @@ const ResearchShowcase = () => {
           </h2>
           <Link
             href="/research"
-            className="rw-cta-text mb-10 inline-flex items-center justify-center whitespace-nowrap rounded-full border border-white px-4 pt-[10px] pb-[11px] text-white transition-all duration-200 hover:bg-white hover:text-black lg:mb-20"
+            className="rw-cta-text mb-10 inline-flex items-center justify-center whitespace-nowrap rounded-full border border-white px-4 pt-[10px] pb-[11px] text-black bg-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_15px_40px_rgba(255,255,255,0.25)] lg:mb-20"
           >
             Read more
           </Link>
@@ -69,7 +73,7 @@ const ResearchShowcase = () => {
               className={`group transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
               style={{ transitionDelay: `${index * 150}ms` }}
             >
-              <div className="relative mb-4 overflow-hidden rounded-xl">
+              <div className="relative mb-4 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
                 <Image
                   src={item.imgSrc}
                   alt={item.imgAlt}

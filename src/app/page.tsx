@@ -8,6 +8,7 @@ import StudiosFeature from "@/components/sections/studios-feature";
 import CustomerStories from "@/components/sections/customer-stories";
 import FooterCta from "@/components/sections/footer-cta";
 import FooterNavigation from "@/components/sections/footer-navigation";
+import CompetitiveEdge from "@/components/sections/competitive-edge";
 
 export default function HomePage() {
   return (
@@ -18,13 +19,15 @@ export default function HomePage() {
         <HeroSection />
         
         <TechnologyOverview />
-        
+
         <AppsShowcase />
-        
+
         <NarrativeCapabilities />
-        
+
+        <CompetitiveEdge />
+
         <ResearchShowcase />
-        
+
         <StudiosFeature />
         
         <CustomerStories />

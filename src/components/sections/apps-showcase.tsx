@@ -10,178 +10,136 @@ interface UseCase {
 }
 
 const useCases: UseCase[] = [
-  { 
-    number: 1, 
-    title: "Feel it Real", 
-    description: "Cinematic realism that feels alive. Create authentic human performances with real actions and motion depth",
-    imageUrl: "https://images.pexels.com/photos/66134/pexels-photo-66134.jpeg?auto=compress&cs=tinysrgb&w=800"
+  {
+    number: 1,
+    title: "DTC Product Launch",
+    description:
+      "Voice your brief; Zero Human writes the hook, casts talent, designs shots, and exports a 4K launch ad in under a minute.",
+    imageUrl:
+      "https://images.pexels.com/photos/16445642/pexels-photo-16445642/free-photo-of-smartphone-with-shopping-app-on-screen.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
-  { 
-    number: 2, 
-    title: "Virtual Location Scouting", 
-    description: "Generate photorealistic environments from text; explore infinite location variations instantly",
-    imageUrl: "https://images.pexels.com/photos/1287460/pexels-photo-1287460.jpeg?auto=compress&cs=tinysrgb&w=800"
+  {
+    number: 2,
+    title: "Performance UGC",
+    description:
+      "Generate TikTok/Meta-ready UGC ads with native pacing, social hooks, and performance-driven CTAs.",
+    imageUrl:
+      "https://images.pexels.com/photos/6898852/pexels-photo-6898852.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
-  { 
-    number: 3, 
-    title: "Script Analysis & Breakdown", 
-    description: "AI identifies technical requirements, complex scenes, and suggests simplifications instantly",
-    imageUrl: "https://images.pexels.com/photos/6899393/pexels-photo-6899393.jpeg?auto=compress&cs=tinysrgb&w=800"
+  {
+    number: 3,
+    title: "Localization without reshoots",
+    description:
+      "Culturally tuned scripts, voices, and visuals for each market—no translators or reshoots.",
+    imageUrl:
+      "https://images.pexels.com/photos/8887877/pexels-photo-8887877.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
-  { 
-    number: 4, 
-    title: "Synthetic Performer Testing", 
-    description: "Generate digital doubles to preview scenes and test creative direction before hiring talent",
-    imageUrl: "https://images.pexels.com/photos/8132616/pexels-photo-8132616.jpeg?auto=compress&cs=tinysrgb&w=800"
+  {
+    number: 4,
+    title: "B2B Explainers",
+    description:
+      "High-trust explainers with data-driven storytelling, clean motion, and executive-grade narration.",
+    imageUrl:
+      "https://images.pexels.com/photos/6802040/pexels-photo-6802040.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
-  { 
-    number: 5, 
-    title: "Real-Time VFX on Set", 
-    description: "Integrate VFX effects during filming; see final result immediately without post-production",
-    imageUrl: "https://images.pexels.com/photos/7991483/pexels-photo-7991483.jpeg?auto=compress&cs=tinysrgb&w=800"
+  {
+    number: 5,
+    title: "App Install Ads",
+    description:
+      "Auto-generate channel-optimized cuts (stories, feed, CTV) with live app flows and CTA testing.",
+    imageUrl:
+      "https://images.pexels.com/photos/3831849/pexels-photo-3831849.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
-  { 
-    number: 6, 
-    title: "Dynamic Lighting Optimization", 
-    description: "AI predicts optimal lighting placement and color based on emotional mood and scene action",
-    imageUrl: "https://images.pexels.com/photos/2928423/pexels-photo-2928423.jpeg?auto=compress&cs=tinysrgb&w=800"
+  {
+    number: 6,
+    title: "Retail & OOH Adaptations",
+    description:
+      "Instantly resize and reversion ads for in-store screens, DOOH, and window displays without agencies.",
+    imageUrl:
+      "https://images.pexels.com/photos/264507/pexels-photo-264507.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
-  { 
-    number: 7, 
-    title: "Intelligent Camera Movement", 
-    description: "AI suggests camera angles and paths; assists with motion and precise automated movements",
-    imageUrl: "https://images.pexels.com/photos/5273046/pexels-photo-5273046.jpeg?auto=compress&cs=tinysrgb&w=800"
+  {
+    number: 7,
+    title: "Creator Marketplace Listings",
+    description:
+      "List your AI-generated spots for brands to buy, rent, or customize—turn creativity into revenue.",
+    imageUrl:
+      "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
-  { 
-    number: 8, 
-    title: "Performance Capture Enhancement", 
-    description: "Standard footage enhanced with AI; actors integrated with digital characters seamlessly",
-    imageUrl: "https://images.pexels.com/photos/7991226/pexels-photo-7991226.jpeg?auto=compress&cs=tinysrgb&w=800"
+  {
+    number: 8,
+    title: "Ad Refresh in 60s",
+    description:
+      "Swap offers, colors, or hooks on the fly to beat fatigue and keep winning creatives live.",
+    imageUrl:
+      "https://images.pexels.com/photos/8217546/pexels-photo-8217546.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
-  { 
-    number: 9, 
-    title: "Dialogue Fix (ADR)", 
-    description: "Fix dialogue issues without reshoots; maintain lip-sync and expression automatically",
-    imageUrl: "https://images.pexels.com/photos/7991442/pexels-photo-7991442.jpeg?auto=compress&cs=tinysrgb&w=800"
+  {
+    number: 9,
+    title: "Brand Films",
+    description:
+      "Cinematic storytelling with AI-directed lighting, music, and pacing—no crews or cameras required.",
+    imageUrl:
+      "https://images.pexels.com/photos/6898857/pexels-photo-6898857.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
-  { 
-    number: 10, 
-    title: "Continuity Checking", 
-    description: "Detect continuity errors instantly; flag costume, lighting, and spatial inconsistencies",
-    imageUrl: "https://images.pexels.com/photos/7991464/pexels-photo-7991464.jpeg?auto=compress&cs=tinysrgb&w=800"
-  },
-  { 
-    number: 11, 
-    title: "Crowd Generation", 
-    description: "Generate realistic crowds and extras digitally; change composition without hiring talent",
-    imageUrl: "https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=800"
-  },
-  { 
-    number: 12, 
-    title: "Intelligent Scene Detection", 
-    description: "AI detects best takes automatically based on performance quality and technical execution",
-    imageUrl: "https://images.pexels.com/photos/7991522/pexels-photo-7991522.jpeg?auto=compress&cs=tinysrgb&w=800"
-  },
-  { 
-    number: 13, 
-    title: "Audio Transcription", 
-    description: "Automatic transcription of all dialogue in seconds; generate multi-language subtitles",
-    imageUrl: "https://images.pexels.com/photos/4087996/pexels-photo-4087996.jpeg?auto=compress&cs=tinysrgb&w=800"
-  },
-  { 
-    number: 14, 
-    title: "Color Grading Automation", 
-    description: "Automatic color grading from description or reference images; adjustable in real-time",
-    imageUrl: "https://images.pexels.com/photos/3945320/pexels-photo-3945320.jpeg?auto=compress&cs=tinysrgb&w=800"
-  },
-  { 
-    number: 15, 
-    title: "Background Replacement", 
-    description: "Replace backgrounds without green screen; transform indoor to outdoor seamlessly",
-    imageUrl: "https://images.pexels.com/photos/6899260/pexels-photo-6899260.jpeg?auto=compress&cs=tinysrgb&w=800"
-  },
-  { 
-    number: 16, 
-    title: "VFX Generation", 
-    description: "Generate VFX effects instantly from text description; particle effects, creatures, sci-fi",
-    imageUrl: "https://images.pexels.com/photos/2962135/pexels-photo-2962135.jpeg?auto=compress&cs=tinysrgb&w=800"
-  },
-  { 
-    number: 17, 
-    title: "Video Upscaling to 4K", 
-    description: "Convert low-resolution footage to 1080p or 4K automatically while preserving detail",
-    imageUrl: "https://images.pexels.com/photos/257904/pexels-photo-257904.jpeg?auto=compress&cs=tinysrgb&w=800"
-  },
-  { 
-    number: 18, 
-    title: "Object & Element Removal", 
-    description: "Mark unwanted object and AI removes it seamlessly; maintains lighting and motion",
-    imageUrl: "https://images.pexels.com/photos/5202956/pexels-photo-5202956.jpeg?auto=compress&cs=tinysrgb&w=800"
-  },
-  { 
-    number: 19, 
-    title: "Sound Design & Synthesis", 
-    description: "Describe desired sound and AI generates adaptive soundscapes and synthetic foley",
-    imageUrl: "https://images.pexels.com/photos/2608519/pexels-photo-2608519.jpeg?auto=compress&cs=tinysrgb&w=800"
-  },
-  { 
-    number: 20, 
-    title: "Archival Footage Restoration", 
-    description: "Restore archival material to broadcast quality; enhance clarity and colorize B&W",
-    imageUrl: "https://images.pexels.com/photos/436413/pexels-photo-436413.jpeg?auto=compress&cs=tinysrgb&w=800"
-  },
-  { 
-    number: 21, 
-    title: "Rapid Prototyping & Animatics", 
-    description: "Turn script into moving animatic in hours; present polished preview for approvals",
-    imageUrl: "https://images.pexels.com/photos/8721342/pexels-photo-8721342.jpeg?auto=compress&cs=tinysrgb&w=800"
+  {
+    number: 10,
+    title: "Cultural Intelligence",
+    description:
+      "Tone, faces, wardrobe, and soundtracks adapt to each region while preserving brand standards.",
+    imageUrl:
+      "https://images.pexels.com/photos/1181527/pexels-photo-1181527.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
 ];
 
 const AppsShowcase = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  
+
   const getCardsPerView = () => {
-    if (typeof window === 'undefined') return 4;
+    if (typeof window === "undefined") return 4;
     if (window.innerWidth < 640) return 1;
     if (window.innerWidth < 1024) return 2;
     return 4;
   };
-  
+
   const [cardsPerView, setCardsPerView] = useState(getCardsPerView());
   const maxIndex = Math.max(0, useCases.length - cardsPerView);
-  
+
   useEffect(() => {
     const handleResize = () => {
       const newCardsPerView = getCardsPerView();
       setCardsPerView(newCardsPerView);
-      setCurrentIndex(prev => Math.min(prev, Math.max(0, useCases.length - newCardsPerView)));
+      setCurrentIndex((prev) =>
+        Math.min(prev, Math.max(0, useCases.length - newCardsPerView))
+      );
     };
-    
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const handlePrev = () => {
-    setCurrentIndex(prev => Math.max(0, prev - 1));
+    setCurrentIndex((prev) => Math.max(0, prev - 1));
   };
 
   const handleNext = () => {
-    setCurrentIndex(prev => Math.min(maxIndex, prev + 1));
+    setCurrentIndex((prev) => Math.min(maxIndex, prev + 1));
   };
 
   const visibleCards = useCases.slice(currentIndex, currentIndex + cardsPerView);
 
   return (
-    <section className="bg-white py-12 sm:py-16 lg:py-24">
+    <section className="bg-gradient-to-b from-white via-[#f7f7f7] to-white py-12 sm:py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-normal tracking-[-1px] sm:tracking-[-2px] text-gray-900 mb-2">
-            Use Case for Everything
+          <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-normal tracking-[-1px] sm:tracking-[-2px] text-gray-900 mb-3">
+            Use cases made for advertisers
           </h2>
-          <p className="mx-auto max-w-xl text-sm sm:text-base text-gray-600 px-4 sm:px-0">
-            Ideal for businesses crafting quick advertisements, it streamlines the process from voice prompts to polished outputs, emphasizing speed, ease, and targeted creativity for marketing needs.
+          <p className="mx-auto max-w-2xl text-sm sm:text-base text-gray-600 px-4 sm:px-0">
+            Zero Human outperforms Runway, HeyGen, and Synthesia where it
+            matters—shipping voice-directed, 4K, performance-ready ads and
+            marketplace listings across every channel and region.
           </p>
         </div>
 
@@ -191,10 +149,14 @@ const AppsShowcase = () => {
               onClick={() => setDropdownOpen(!dropdownOpen)}
               className="flex items-center gap-1 text-gray-900 transition-colors hover:text-gray-600 text-sm font-medium"
             >
-              View All Features
-              <ChevronDown className={`h-4 w-4 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} />
+              View all use cases
+              <ChevronDown
+                className={`h-4 w-4 transition-transform ${
+                  dropdownOpen ? "rotate-180" : ""
+                }`}
+              />
             </button>
-            
+
             {dropdownOpen && (
               <div className="absolute top-full left-0 mt-2 w-full sm:w-80 max-h-96 overflow-y-auto bg-white border border-gray-200 rounded-lg shadow-lg z-10">
                 {useCases.map((useCase) => (
@@ -206,8 +168,12 @@ const AppsShowcase = () => {
                     }}
                     className="w-full text-left px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-b-0 transition-colors"
                   >
-                    <div className="font-medium text-sm text-gray-900">{useCase.title}</div>
-                    <div className="text-xs text-gray-500 mt-1 line-clamp-2">{useCase.description}</div>
+                    <div className="font-medium text-sm text-gray-900">
+                      {useCase.title}
+                    </div>
+                    <div className="text-xs text-gray-500 mt-1 line-clamp-2">
+                      {useCase.description}
+                    </div>
                   </button>
                 ))}
               </div>
@@ -218,49 +184,51 @@ const AppsShowcase = () => {
             <div className="flex items-center gap-2">
               <button
                 onClick={handlePrev}
+                className="rounded-full border border-gray-200 p-2 text-gray-600 hover:text-gray-900 hover:border-gray-300 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
                 disabled={currentIndex === 0}
-                aria-label="Previous page"
-                className="flex h-8 w-8 items-center justify-center rounded-md bg-gray-100 text-gray-600 transition-colors hover:bg-gray-200 disabled:opacity-40 disabled:cursor-not-allowed"
               >
-                <ChevronLeft className="h-4 w-4" />
+                <ChevronLeft className="h-5 w-5" />
               </button>
               <button
                 onClick={handleNext}
+                className="rounded-full border border-gray-200 p-2 text-gray-600 hover:text-gray-900 hover:border-gray-300 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
                 disabled={currentIndex >= maxIndex}
-                aria-label="Next page"
-                className="flex h-8 w-8 items-center justify-center rounded-md bg-gray-100 text-gray-600 transition-colors hover:bg-gray-200 disabled:opacity-40 disabled:cursor-not-allowed"
               >
-                <ChevronRight className="h-4 w-4" />
+                <ChevronRight className="h-5 w-5" />
               </button>
             </div>
-            <span className="text-xs text-gray-500 uppercase tracking-wider whitespace-nowrap">
-              {currentIndex + 1}-{Math.min(currentIndex + cardsPerView, useCases.length)} of {useCases.length}
-            </span>
+
+            <div className="text-xs text-gray-500">
+              {currentIndex + 1} - {Math.min(currentIndex + cardsPerView, useCases.length)} of {useCases.length}
+            </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:px-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {visibleCards.map((useCase) => (
             <div
               key={useCase.number}
-              className="block rounded-lg border border-black/10 bg-white p-4 transition-all duration-300 hover:bg-gray-100 hover:shadow-md cursor-pointer"
+              className="group relative overflow-hidden rounded-2xl border border-gray-200 shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_25px_70px_rgba(0,0,0,0.12)] bg-white"
             >
-              <div className="flex items-start gap-2 mb-3">
-                <div className="flex-shrink-0 w-5 h-5 rounded bg-gray-300 flex items-center justify-center text-gray-600 font-medium text-[10px]">
-                  {useCase.number}
+              <div className="aspect-[4/5]">
+                <img
+                  src={useCase.imageUrl}
+                  alt={useCase.title}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-4 flex flex-col gap-2">
+                <div className="text-xs text-gray-500 font-medium">
+                  #{useCase.number.toString().padStart(2, "0")}
                 </div>
-                <h3 className="text-base sm:text-lg font-semibold leading-tight text-gray-900">
+                <h3 className="text-lg font-semibold text-gray-900">
                   {useCase.title}
                 </h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {useCase.description}
+                </p>
               </div>
-              <p className="text-xs text-gray-600 leading-relaxed mb-3">
-                {useCase.description}
-              </p>
-              <img
-                src={useCase.imageUrl}
-                alt={useCase.title}
-                className="w-full h-28 sm:h-32 lg:h-28 rounded-md object-cover"
-              />
             </div>
           ))}
         </div>

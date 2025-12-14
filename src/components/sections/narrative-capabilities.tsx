@@ -72,23 +72,28 @@ const videoCards = [
 
 const NarrativeCapabilities = () => {
   return (
-    <section className="bg-black py-24 lg:py-40 text-white">
-      <div className="rw-container">
-        <div className="text-center">
-          <div className="inline-flex justify-center items-center py-2 px-3 border border-white border-opacity-30 rounded mb-4">
+    <section className="relative overflow-hidden bg-gradient-to-b from-black via-[#0f1012] to-black py-24 lg:py-40 text-white">
+      <div className="absolute inset-0 opacity-60 pointer-events-none">
+        <div className="absolute -left-10 top-0 h-full w-1/2 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.08),transparent_45%)]" />
+        <div className="absolute right-0 bottom-0 h-full w-1/2 bg-[radial-gradient(circle_at_80%_80%,rgba(255,255,255,0.05),transparent_45%)]" />
+      </div>
+      <div className="rw-container relative">
+        <div className="text-center max-w-3xl mx-auto">
+          <div className="inline-flex justify-center items-center py-2 px-3 border border-white/30 rounded-full mb-4 bg-white/5 backdrop-blur">
             <div className="rw-eyebrow text-white text-opacity-80">ZERO V1 ENGINE</div>
           </div>
-          <h2 className="text-[40px] tracking-[-1.6px] font-sans leading-none text-white font-normal mb-6">
-            From Voice to Video in 60 Seconds
+          <h2 className="text-[42px] sm:text-[48px] tracking-[-1.6px] font-sans leading-[1.05] text-white font-normal mb-6">
+            From voice note to shoppable ad
           </h2>
-          <p className="text-base text-white text-opacity-80 max-w-xl mx-auto mb-10">
-            See how brands are using Zero Human to create cinematic product ads at scale—no cameras, 
-            no actors, no production teams. Just voice your vision and our AI Co-Director brings it to life 
-            with physically accurate, brand-aligned 4K video.
+          <p className="text-base sm:text-lg text-white text-opacity-80 max-w-2xl mx-auto mb-10 leading-relaxed">
+            Brands use Zero Human to ship 4K ads faster than Runway or HeyGen:
+            multilingual scripts, cultural nuance, talent casting, shots, music,
+            performance hooks—and a marketplace to sell or rent the finished
+            spots.
           </p>
           <Link
             href="/research/introducing-zero-v1"
-            className="rw-cta-text px-4 pt-[10px] pb-[11px] rounded-full inline-flex transition-all duration-200 items-center justify-center whitespace-nowrap text-white border border-white hover:bg-white hover:text-black"
+            className="rw-cta-text px-5 pt-[10px] pb-[11px] rounded-full inline-flex transition-all duration-200 items-center justify-center whitespace-nowrap text-black bg-white border border-white hover:-translate-y-0.5 hover:shadow-[0_15px_40px_rgba(255,255,255,0.25)]"
           >
             Learn More
           </Link>

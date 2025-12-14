@@ -42,16 +42,16 @@ const stories: Story[] = [
 
 const CustomerStories = () => {
   return (
-    <section className="bg-background text-foreground pt-20 lg:pt-20 pb-16 lg:pb-32">
+    <section className="bg-gradient-to-b from-white via-[#f9f9f9] to-white text-foreground pt-20 lg:pt-24 pb-16 lg:pb-32">
       <div className="rw-container">
-        <div className="lg:w-8/12 w-full text-center mx-auto mb-10 lg:mb-16">
-          <h2 className="text-[40px] tracking-[-1px] font-sans leading-[1.2] mb-6">
+        <div className="lg:w-8/12 w-full text-center mx-auto mb-10 lg:mb-14">
+          <h2 className="text-[36px] sm:text-[40px] tracking-[-1px] font-sans leading-[1.2] mb-4 text-off-black">
             How brands are transforming <br />
             video advertising with Zero Human.
           </h2>
           <a
             href="/signin"
-            className="rw-cta-text px-4 pt-[10px] pb-[11px] rounded-full inline-flex transition-all duration-200 items-center justify-center whitespace-nowrap text-off-black border border-off-black hover:bg-off-black hover:text-white"
+            className="rw-cta-text px-5 pt-[10px] pb-[11px] rounded-full inline-flex transition-all duration-200 items-center justify-center whitespace-nowrap text-white bg-off-black border border-off-black hover:-translate-y-0.5 hover:shadow-[0_15px_40px_rgba(0,0,0,0.15)]"
           >
             Try Now
           </a>
@@ -61,23 +61,23 @@ const CustomerStories = () => {
             <a
               key={story.href}
               href={story.href}
-              className="cursor-pointer block relative transition-colors duration-300 group"
+              className="cursor-pointer block relative transition-transform duration-300 group rounded-2xl overflow-hidden border border-black/5 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:-translate-y-1 hover:shadow-[0_25px_70px_rgba(0,0,0,0.12)]"
             >
-              <div className="bg-[#3B3B3B]/10 absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
-              <div className="relative z-10 space-y-4">
-                <div className="w-full relative overflow-hidden rounded-lg">
-                  <Image
-                    src={story.imgSrc}
-                    alt={story.imgAlt}
-                    width={story.imgWidth}
-                    height={story.imgHeight}
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
+              <div className="relative overflow-hidden">
+                <Image
+                  src={story.imgSrc}
+                  alt={story.imgAlt}
+                  width={story.imgWidth}
+                  height={story.imgHeight}
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+              <div className="p-5 space-y-2">
                 <div className="text-muted-foreground rw-eyebrow">
                   {story.category}
                 </div>
-                <div className="text-base font-normal text-gray-200">{story.title}</div>
+                <div className="text-base font-normal text-off-black leading-relaxed">{story.title}</div>
               </div>
             </a>
           ))}
