@@ -139,14 +139,12 @@ export default function MarketplacePage() {
             </div>
 
             <div className="flex gap-6">
-              {(showFilters || window.innerWidth >= 768) && (
-                <div className="w-64">
-                  <MarketplaceFilters
-                    selectedCategory={selectedCategory}
-                    onCategoryChange={setSelectedCategory}
-                  />
-                </div>
-              )}
+              <div className={`${showFilters ? 'block' : 'hidden md:block'} w-64`}>
+                <MarketplaceFilters
+                  selectedCategory={selectedCategory}
+                  onCategoryChange={setSelectedCategory}
+                />
+              </div>
 
               <div className="flex-1">
                 <div className="flex items-center justify-between mb-4">

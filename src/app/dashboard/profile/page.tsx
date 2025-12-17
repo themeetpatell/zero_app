@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { 
   User, Mail, MapPin, Calendar, Edit, Camera, Save, 
   Trophy, Video, DollarSign, TrendingUp, Star, Crown,
-  Settings, Bell, Shield, CreditCard, LogOut
+  Settings, Bell, Shield, CreditCard, LogOut, Eye, Download
 } from "lucide-react";
 import { useSession } from "@/lib/auth-client";
 
@@ -368,5 +368,4 @@ export default function ProfilePage() {
 }
 
 const BarChart3 = TrendingUp;
-const Download = Video;
 
