@@ -34,9 +34,10 @@ export default function DashboardLayout({
   };
 
   const handleNewThread = () => {
-    createThread();
     setActiveThreadId(null);
-    router.push("/dashboard");
+    if (pathname !== "/dashboard") {
+      router.push("/dashboard");
+    }
   };
 
   return (

@@ -20,12 +20,21 @@ export default function DashboardPage() {
   const activeThread = getActiveThread();
 
   useEffect(() => {
-    if (!activeThreadId) {
-      createThread();
+    if (activeThreadId && activeThread && activeThread.messages.length > 0) {
+      setShowCanvas(false);
+      setIsConversationMode(true);
+    } else {
       setShowCanvas(true);
       setIsConversationMode(false);
     }
-  }, []);
+  }, [activeThreadId, activeThread]);
+
+  useEffect(() => {
+    if (!activeThreadId) {
+      setShowCanvas(true);
+      setIsConversationMode(false);
+    }
+  }, [activeThreadId]);
 
   const handleGenerate = (query: string) => {
     if (!query.trim()) return;
@@ -61,13 +70,9 @@ export default function DashboardPage() {
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        if (showCanvas) {
-          setShowCanvas(false);
-          if (!activeThreadId) {
-            setIsConversationMode(false);
-          }
-        } else if (isConversationMode) {
+        if (isConversationMode) {
           setIsConversationMode(false);
+          setShowCanvas(true);
           setActiveThreadId(null);
         }
       }
@@ -77,9 +82,12 @@ export default function DashboardPage() {
     return () => window.removeEventListener("keydown", handleEsc);
   }, [showCanvas, isConversationMode, activeThreadId, setActiveThreadId]);
 
+  const hasMessages = activeThread && activeThread.messages.length > 0;
+  const shouldShowConversation = isConversationMode && hasMessages && !showCanvas;
+
   return (
     <div className="flex-1 relative overflow-hidden bg-bg-underlay">
-      {isConversationMode && activeThread && !showCanvas && (
+      {shouldShowConversation ? (
         <div className="flex flex-col h-full">
           <div className="flex-1 overflow-y-auto overflow-x-hidden pt-4 md:pt-0">
             <ConversationView messages={activeThread.messages} />
@@ -94,9 +102,7 @@ export default function DashboardPage() {
             </div>
           </div>
         </div>
-      )}
-
-      {showCanvas && (
+      ) : (
         <div className="absolute inset-0 z-50 bg-bg-underlay flex items-center justify-center pt-16 md:pt-0 pb-20 md:pb-0">
           <div className="w-full max-w-xl px-4 md:px-5 flex flex-col items-center justify-center gap-6 md:gap-7">
             <div className="text-center space-y-2 md:space-y-3">
