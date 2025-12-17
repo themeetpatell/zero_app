@@ -7,9 +7,6 @@ const getClient = () => {
   const authToken = process.env.TURSO_AUTH_TOKEN;
 
   if (!url) {
-    if (process.env.NODE_ENV === 'production') {
-      throw new Error('TURSO_CONNECTION_URL is required in production');
-    }
     return createClient({
       url: 'file:local.db',
     });
