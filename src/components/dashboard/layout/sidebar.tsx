@@ -12,6 +12,13 @@ import {
   Bell,
   Plus,
   IconProps,
+  Sparkle,
+  ShoppingCart,
+  ChartBar,
+  CurrencyDollar,
+  Flask,
+  UsersThree,
+  GraduationCap,
 } from "@phosphor-icons/react";
 import { cn } from "@/lib/utils";
 import ProfileMenu from "./profile-menu";
@@ -125,14 +132,16 @@ export default function Sidebar({ onNewThread, onHistoryHover }: SidebarProps) {
   const [notificationsOpen, setNotificationsOpen] = React.useState(false);
 
   const navItems: NavItemProps[] = [
-    { href: "/dashboard", icon: House, label: "Home" },
-    {
-      icon: ClockCounterClockwise,
-      label: "History",
-      onMouseEnter: () => onHistoryHover?.(true),
-      onMouseLeave: () => onHistoryHover?.(false),
-    },
-    { href: "/dashboard/creations", icon: PaintBucket, label: "Creations" },
+    { href: "/dashboard/home", icon: House, label: "Home" },
+    { href: "/dashboard/studio", icon: Sparkle, label: "Studio" },
+    { href: "/dashboard/marketplace", icon: ShoppingCart, label: "Market" },
+    { href: "/dashboard/creations", icon: PaintBucket, label: "Library" },
+    { href: "/dashboard/history", icon: ClockCounterClockwise, label: "History" },
+    { href: "/dashboard/analytics", icon: ChartBar, label: "Analytics" },
+    { href: "/dashboard/earnings", icon: CurrencyDollar, label: "Earnings" },
+    { href: "/dashboard/learn", icon: GraduationCap, label: "Learn" },
+    { href: "/dashboard/ab-testing", icon: Flask, label: "A/B Test" },
+    { href: "/dashboard/collaborate", icon: UsersThree, label: "Team" },
   ];
 
   const user = session?.user;
@@ -159,11 +168,12 @@ export default function Sidebar({ onNewThread, onHistoryHover }: SidebarProps) {
           {/* New Thread Button */}
           <button
             onClick={onNewThread}
-            className="mt-5 flex h-9 w-9 items-center justify-center rounded-full bg-sidebar-accent hover:bg-sidebar-accent/80 transition-all duration-100 hover:scale-105 active:scale-95"
-            title="New Thread"
+            className="mt-5 flex h-10 w-10 items-center justify-center rounded-full bg-teal-500 hover:bg-teal-600 transition-all duration-200 hover:scale-110 active:scale-95 shadow-lg shadow-teal-500/50 aspect-square"
+            title="New Chat"
+            style={{ borderRadius: '50%' }}
           >
             <Plus
-              className="h-[18px] w-[18px] text-sidebar-accent-foreground"
+              className="h-5 w-5 text-white flex-shrink-0"
               weight="bold"
             />
           </button>

@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, Search } from "lucide-react";
-import Sidebar from "@/components/dashboard/layout/sidebar";
+
 import { useThreads, Message } from "../../../../lib/hooks/use-threads";
 import "@/app/dashboard/dashboard.css";
 
@@ -26,8 +26,8 @@ export default function AllHistoryPage() {
   );
 
   return (
-    <div className="flex h-dvh w-full overflow-hidden bg-underlay">
-      <Sidebar />
+    <div className="flex-1 overflow-hidden bg-underlay">
+      
 
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Header */}

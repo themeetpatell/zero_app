@@ -67,11 +67,11 @@ const SignInPage = () => {
       {mounted && (
         <div className="w-full max-w-md">
           <Link 
-            href="/"
+            href="/dashboard"
             className="inline-flex items-center gap-2 text-sm text-[#6B7280] hover:text-[#111827] transition-colors duration-200 mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to home
+            Back to dashboard
           </Link>
 
           <div className="bg-white border border-[#E5E7EB] rounded-xl p-8 shadow-[0px_4px_8px_0px_rgba(0,0,0,0.06)]">

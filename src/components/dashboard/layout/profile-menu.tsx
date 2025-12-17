@@ -19,6 +19,7 @@ import {
   Sparkles,
   FileText,
   MessageCircle,
+  User,
 } from "lucide-react";
 import WhatsNew from "@/components/dashboard/modals/update-dialog";
 import SupportDialog from "@/components/dashboard/modals/support-dialog";
@@ -178,6 +179,17 @@ export default function ProfileMenu({ children, onUpgradeClick }: ProfileMenuPro
 
           {/* Menu Items */}
           <div className="p-1">
+            <DropdownMenuItem
+              onClick={() => {
+                setIsOpen(false);
+                router.push("/dashboard/profile");
+              }}
+              className="flex items-center gap-2 px-2 py-1.5 cursor-pointer rounded-lg hover:bg-accent/50 transition-colors"
+            >
+              <User className="size-3 text-muted-foreground" />
+              <span className="text-xs">Profile</span>
+            </DropdownMenuItem>
+
             <DropdownMenuItem
               onClick={() => {
                 setIsOpen(false);
