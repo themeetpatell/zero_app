@@ -55,7 +55,9 @@ export default function DashboardLayout({
         onHoverChange={setThreadSidebarHovered}
       />
 
-      {children}
+      <main className="flex-1 overflow-hidden md:ml-0 pb-16 md:pb-0">
+        {children}
+      </main>
     </div>
   );
 }

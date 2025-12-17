@@ -28,7 +28,7 @@ export default function ThreadSidebar({
       onMouseEnter={() => onHoverChange?.(true)}
       onMouseLeave={() => onHoverChange?.(false)}
       className={cn(
-        "fixed left-13 top-0 h-full w-35 bg-sidebar border-r border-border-subtlest z-80 flex flex-col",
+        "fixed md:left-13 left-0 top-0 h-full w-35 max-w-[85vw] md:max-w-none bg-sidebar border-r border-border-subtlest z-80 flex flex-col",
         isHovered ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0 pointer-events-none",
         "transition-transform duration-300 ease-out"
       )}

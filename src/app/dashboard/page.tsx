@@ -81,11 +81,11 @@ export default function DashboardPage() {
     <div className="flex-1 relative overflow-hidden bg-bg-underlay">
       {isConversationMode && activeThread && !showCanvas && (
         <div className="flex flex-col h-full">
-          <div className="flex-1 overflow-y-auto overflow-x-hidden">
+          <div className="flex-1 overflow-y-auto overflow-x-hidden pt-4 md:pt-0">
             <ConversationView messages={activeThread.messages} />
           </div>
 
-          <div className="sticky bottom-0 left-0 right-0 px-5 py-3.5 z-40 bg-bg-underlay border-t border-border-subtlest">
+          <div className="sticky bottom-0 left-0 right-0 px-4 md:px-5 py-3 md:py-3.5 z-40 bg-bg-underlay border-t border-border-subtlest" style={{ paddingBottom: 'max(0.75rem, calc(0.875rem + env(safe-area-inset-bottom)))' }}>
             <div className="mx-auto max-w-xl w-full">
               <SearchInputContainer 
                 onGenerate={handleGenerate} 
@@ -97,10 +97,10 @@ export default function DashboardPage() {
       )}
 
       {showCanvas && (
-        <div className="absolute inset-0 z-50 bg-bg-underlay flex items-center justify-center">
-          <div className="w-full max-w-xl px-5 flex flex-col items-center justify-center gap-7">
-            <div className="text-center space-y-3">
-              <h1 className="text-3xl font-light text-sidebar-foreground tracking-tight">
+        <div className="absolute inset-0 z-50 bg-bg-underlay flex items-center justify-center pt-16 md:pt-0 pb-20 md:pb-0">
+          <div className="w-full max-w-xl px-4 md:px-5 flex flex-col items-center justify-center gap-6 md:gap-7">
+            <div className="text-center space-y-2 md:space-y-3">
+              <h1 className="text-2xl md:text-3xl font-light text-sidebar-foreground tracking-tight">
                 What would you like to create?
               </h1>
             </div>

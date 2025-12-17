@@ -65,23 +65,23 @@ export default function ChatPage() {
   }
 
   return (
-    <div className="flex-1 flex flex-col h-full bg-bg-underlay">
+    <div className="flex-1 flex flex-col h-full bg-bg-underlay pt-16 md:pt-0">
       {activeThread.messages.length === 0 ? (
-        <div className="flex-1 flex items-center justify-center p-8">
-          <div className="max-w-3xl w-full space-y-8">
-            <div className="text-center space-y-4">
-              <div className="w-16 h-16 rounded-full bg-teal-500/10 flex items-center justify-center mx-auto">
-                <Sparkles className="w-8 h-8 text-teal-400" />
+        <div className="flex-1 flex items-center justify-center p-4 md:p-8 overflow-y-auto">
+          <div className="max-w-3xl w-full space-y-6 md:space-y-8">
+            <div className="text-center space-y-3 md:space-y-4">
+              <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-teal-500/10 flex items-center justify-center mx-auto">
+                <Sparkles className="w-6 h-6 md:w-8 md:h-8 text-teal-400" />
               </div>
-              <h1 className="text-4xl font-light text-sidebar-foreground">
+              <h1 className="text-2xl md:text-4xl font-light text-sidebar-foreground px-4">
                 What would you like to create?
               </h1>
-              <p className="text-text-quiet text-lg">
+              <p className="text-text-quiet text-sm md:text-lg px-4">
                 I can help you generate professional 4K video ads in seconds
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-3 md:gap-4 px-4">
               {[
                 { title: "Luxury Product Ad", desc: "Create sophisticated brand video", icon: Sparkles },
                 { title: "Social Media Reel", desc: "Generate viral short-form content", icon: Video },
@@ -104,8 +104,8 @@ export default function ChatPage() {
           </div>
         </div>
       ) : (
-        <div className="flex-1 overflow-y-auto px-6 py-6">
-          <div className="max-w-3xl mx-auto space-y-6">
+        <div className="flex-1 overflow-y-auto px-4 md:px-6 py-4 md:py-6 pt-20 md:pt-6">
+          <div className="max-w-3xl mx-auto space-y-4 md:space-y-6">
             {activeThread.messages.map((message) => (
               <motion.div
                 key={message.id}
@@ -150,7 +150,7 @@ export default function ChatPage() {
         </div>
       )}
 
-      <div className="flex-none border-t border-border-subtle bg-bg-subtle/50 backdrop-blur-xl p-4">
+      <div className="flex-none border-t border-border-subtle bg-bg-subtle/50 backdrop-blur-xl p-3 md:p-4" style={{ paddingBottom: 'max(0.75rem, calc(1rem + env(safe-area-inset-bottom)))' }}>
         <div className="max-w-3xl mx-auto">
           <div className="relative">
             <textarea
